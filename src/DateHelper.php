@@ -32,4 +32,18 @@ class DateHelper
     {
         return self::setTimeEnd((clone $date)->modify('last day of this month'));
     }
+
+    /**
+     * timezone example: Pacific/Nauru
+     * @param null $timezone
+     * @return \DateTime
+     * @throws \Exception
+     */
+    public static function getNow($timezone = null)
+    {
+        if (!is_null($timezone)) {
+            return new \DateTime('now', new \DateTimeZone($timezone));
+        }
+        return new \DateTime('now');
+    }
 }
