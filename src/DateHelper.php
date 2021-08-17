@@ -46,4 +46,9 @@ class DateHelper
         }
         return new \DateTime('now');
     }
+
+    public static function addDays(\DateTime $date, $days)
+    {
+        return $date->modify(sprintf('+ %d days ', $days));
+    }
 }
