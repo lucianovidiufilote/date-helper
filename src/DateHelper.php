@@ -51,4 +51,9 @@ class DateHelper
     {
         return $date->modify(sprintf('+ %d days ', $days));
     }
+
+    public static function getHumanReadableFormat(\DateTime $dateTime)
+    {
+        return $dateTime->format("d M Y, H:i");
+    }
 }
